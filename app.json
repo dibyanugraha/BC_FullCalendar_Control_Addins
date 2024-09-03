@@ -1,0 +1,33 @@
+{
+  "id": "73343d99-da2a-49d6-a899-0cff0d064d61",
+  "name": "Microsoft Dynamics 365 Business Central Calendar Control Addin Sample with FullCalendar",
+  "publisher": "A. Dibyanugraha",
+  "version": "1.0.0.0",
+  "brief": "Microsoft Dynamics 365 Business Central Calendar Control Addin Sample with FullCalendar",
+  "description": "Microsoft Dynamics 365 Business Central Calendar Control Addin Sample with FullCalendar",
+  "privacyStatement": "",
+  "EULA": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html",
+  "help": "https://github.com/dibyanugraha/BC_FullCalendar_Control_Addins",
+  "url": "https://github.com/dibyanugraha/BC_FullCalendar_Control_Addins",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "24.0.0.0",
+  "application": "24.0.0.0",
+  "idRanges": [
+    {
+      "from": 50000,
+      "to": 99999
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": false,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false,
+    "applyToDevExtension": false
+  },
+  "runtime": "13.0",
+  "features": [
+    "NoImplicitWith"
+  ],
+  "keyVaultUrls":[]
+}
