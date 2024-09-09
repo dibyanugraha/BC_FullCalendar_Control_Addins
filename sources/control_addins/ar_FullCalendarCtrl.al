@@ -20,5 +20,8 @@ controladdin ar_FullCalendarCtrl
 
     event OnInsertNewRecord();
     event OnControlAddInReady();
+    event ShowMessageOnBC(title: Text; msg: Text);
+
+    procedure AcceptConfirm(answer: Boolean);
     procedure RetrieveData(EventRec: Text);
 }
