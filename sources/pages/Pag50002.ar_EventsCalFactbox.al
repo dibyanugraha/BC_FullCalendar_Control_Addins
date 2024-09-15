@@ -16,19 +16,17 @@ page 50002 ar_EventsCalFactbox
                     Message('Events Calendar is ready!');
                 end;
 
-                trigger ShowMessageOnBC(type: Text; msg: Text)
+                trigger ShowMessageOnBC(msg: Text)
                 begin
-                    case type of
-                        'info':
-                            Message(msg);
-                        'confirm':
-                            if Confirm(msg) then
-                                CurrPage.EventsCalendar.AcceptConfirm(true)
-                            else
-                                CurrPage.EventsCalendar.AcceptConfirm(false);
-                        else
-                            ;
-                    end;
+                    Message(msg);
+                end;
+
+                trigger ShowConfirmDialogOnBC(msg: Text)
+                begin
+                    if Confirm(msg) then
+                        CurrPage.EventsCalendar.AcceptConfirm(true)
+                    else
+                        CurrPage.EventsCalendar.AcceptConfirm(false);
                 end;
             }
         }
