@@ -20,14 +20,6 @@ page 50002 ar_EventsCalFactbox
                 begin
                     Message(msg);
                 end;
-
-                trigger ShowConfirmDialogOnBC(msg: Text)
-                begin
-                    if Confirm(msg) then
-                        CurrPage.EventsCalendar.AcceptConfirm(true)
-                    else
-                        CurrPage.EventsCalendar.AcceptConfirm(false);
-                end;
             }
         }
     }
