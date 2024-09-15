@@ -2,6 +2,7 @@ controladdin ar_FullCalendarCtrl
 {
     Scripts =
         'scripts/startup.js'
+        , 'scripts/supplyData.js'
         , 'scripts/index.global.min.js';
 
     StyleSheets =

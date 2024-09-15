@@ -23,19 +23,21 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     editable: true,
     dayMaxEvents: true, // when too many events in a day, show the popover
-    events: 'https://fullcalendar.io/api/demo-feeds/events.json?overload-day',
-    eventResize: function(info) {
-    alert(info.event.title + " end is now " + info.event.end.toISOString());
-
-    if (!confirm("is this okay?")) {
-      info.revert();
-    }},
+    events: supplyData(),
+    eventResize: async function(info) {
+      if (!confirm("Continue to resize?")) {
+        info.revert();
+      } else {
+        Microsoft.Dynamics.NAV.InvokeExtensibilityMethod('ShowMessageOnBC', [info.event.title + " end is now " + info.event.end.toISOString()]);
+      }
+    },
     eventDrop: function(info) {
-    alert(info.event.title + " was dropped on " + info.event.start.toISOString());
-
-    if (!confirm("Are you sure about this change?")) {
-      info.revert();
-    }}
+      if (!confirm("Are you sure about this change?")) {
+        info.revert();
+      } else {
+        Microsoft.Dynamics.NAV.InvokeExtensibilityMethod('ShowMessageOnBC', [info.event.title + " was dropped on " + info.event.end.toISOString()]);
+      }
+    }
 
   });
   calendar.render();
