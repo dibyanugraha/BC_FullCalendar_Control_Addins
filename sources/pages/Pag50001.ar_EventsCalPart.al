@@ -40,4 +40,19 @@ page 50001 ar_EventsCalPart
             }
         }
     }
+
+    trigger OnModifyRecord(): Boolean
+    begin
+        CurrPage.Update(false);
+    end;
+
+    trigger OnDeleteRecord(): Boolean
+    begin
+        CurrPage.Update(false);
+    end;
+
+    trigger OnInsertRecord(BelowXRec: Boolean): Boolean
+    begin
+        CurrPage.Update(false);
+    end;
 }
