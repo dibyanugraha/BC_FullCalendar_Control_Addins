@@ -69,11 +69,16 @@ table 50000 ar_Event
                     FieldError("End Date", ErrEndDateMustBeLaterThanStartDate);
             end;
         }
+        field(10000; "Marketing Setup"; Code[10])
+        {
+            DataClassification = SystemMetadata;
+            TableRelation = "Marketing Setup";
+        }
     }
 
     keys
     {
-        key(Key1; "No.")
+        key(Key1; "No.", "Marketing Setup")
         {
             Clustered = true;
         }
