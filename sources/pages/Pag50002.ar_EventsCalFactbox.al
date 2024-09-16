@@ -7,7 +7,7 @@ page 50002 ar_EventsCalFactbox
     {
         area(Content)
         {
-            usercontrol(EventsCalendar; ar_FullCalendarCtrl)
+            usercontrol(EventsCalendar; ar_TuiCalendarCtrl)
             {
                 ApplicationArea = All;
 

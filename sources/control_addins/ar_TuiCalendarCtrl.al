@@ -1,4 +1,4 @@
-controladdin ar_FullCalendarCtrl
+controladdin ar_TuiCalendarCtrl
 {
     Scripts =
         'scripts/startup.js'
