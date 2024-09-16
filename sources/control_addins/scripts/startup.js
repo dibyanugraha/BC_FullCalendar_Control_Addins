@@ -1,5 +1,7 @@
 var controlAddIn = document.getElementById("controlAddIn");
 
+var calendarData = [];
+
 if (controlAddIn) {
   var parentBody = controlAddIn.parentNode;
   if (parentBody)
@@ -35,10 +37,15 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!confirm("Are you sure about this change?")) {
         info.revert();
       } else {
-        Microsoft.Dynamics.NAV.InvokeExtensibilityMethod('ShowMessageOnBC', [info.event.title + " was dropped on " + info.event.end.toISOString()]);
+        Microsoft.Dynamics.NAV.InvokeExtensibilityMethod('ShowMessageOnBC', [info.event.title + " was dropped on " + info.event.start.toISOString()]);
       }
     }
 
   });
   calendar.render();
 });
+
+function RetrieveData(eventData) {
+  alert(eventData);
+  calendarData.push(eventData);
+}
