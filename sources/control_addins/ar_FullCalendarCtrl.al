@@ -3,10 +3,10 @@ controladdin ar_FullCalendarCtrl
     Scripts =
         'scripts/startup.js'
         , 'scripts/supplyData.js'
-        , 'scripts/index.global.min.js';
+        , 'scripts/toastui-calendar.min.js';
 
     StyleSheets =
-        'stylesheets/fullcalendar_default_style.css';
+        'stylesheets/toastui-calendar.min.css';
 
     StartupScript = 'scripts/startup.js';
 
