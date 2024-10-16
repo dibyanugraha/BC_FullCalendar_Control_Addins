@@ -13,11 +13,13 @@ controladdin ar_TuiCalendarCtrl
     RequestedHeight = 500;
     RequestedWidth = 600;
     MinimumWidth = 400;
-    MaximumWidth = 1000;
-    MinimumHeight = 300;
+    MaximumWidth = 2000;
+    MinimumHeight = 400;
     MaximumHeight = 2000;
     HorizontalStretch = true;
     VerticalStretch = true;
+    HorizontalShrink = true;
+    VerticalShrink = true;
 
     event OnInsertNewRecord();
     event OnControlAddInReady();
