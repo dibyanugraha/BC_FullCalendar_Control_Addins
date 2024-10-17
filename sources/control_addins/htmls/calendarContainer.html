@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <button type="button" class="button is-link" 
+    onclick="window.gotoToday()">Today</button>
+  <button class="button is-link is-light" onclick="window.gotoPrevWeek()">
+    <span class="material-symbols-outlined">
+      arrow_circle_left
+      </span>
+  </button>
+  <button class="button is-link is-light" onclick="window.gotoNextWeek()">
+    <span class="material-symbols-outlined">
+      arrow_circle_right
+      </span>
+  </button>
+  <span id="calendarDateRange" class="subtitle is-3"></span>
+</nav>
+<div id="calendarFrame"></div>
