@@ -24,16 +24,17 @@ $("#controlAddIn").load(url, function (response, status, xhr) {
     const options = {
       usageStatistics: false,
       defaultView: 'week',
-      startDayOfWeek: 0,
-      workweek: true,
-      showNowIndicator: true,
-      hourStart: 8,
-      hourEnd: 17,
-      eventView: false,
-      taskView: false,
-      collapseDuplicateEvents: false,
       useFormPopup: true,
       useDetailPopup: true,
+      week: {
+        startDayOfWeek: 1,
+        workweek: true,
+        showNowIndicator: true,
+        hourStart: 8,
+        hourEnd: 17,
+        taskView: false,
+        collapseDuplicateEvents: false,
+      },
       calendars: [
         {
           id: 'cal1',
@@ -49,12 +50,11 @@ $("#controlAddIn").load(url, function (response, status, xhr) {
     };
 
     var Calendar = tui.Calendar;
-    let calendar = new Calendar('#calendarFrame');
+    let calendar = new Calendar('#calendarFrame', options);
     let dateStart = new Date(calendar.getDateRangeStart());
     let dateEnd = new Date(calendar.getDateRangeEnd());
     document.getElementById("calendarDateRange").innerHTML = dateStart.toLocaleDateString() + ' ~ ' + dateEnd.toLocaleDateString();
 
-    calendar.setOptions(options);
     calendar.createEvents([
         {
           id: 'event1',
