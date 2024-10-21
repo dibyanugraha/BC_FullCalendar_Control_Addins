@@ -15,12 +15,6 @@ $("#controlAddIn").load(url, function (response, status, xhr) {
       }
     }
 
-    // var target = window.frameElement;
-
-    // if (target) {
-    //   target.setAttribute("scrolling", "yes");
-    // };
-
     const options = {
       usageStatistics: false,
       defaultView: 'week',
@@ -39,12 +33,22 @@ $("#controlAddIn").load(url, function (response, status, xhr) {
         {
           id: 'cal1',
           name: 'Personal',
-          backgroundColor: '#03bd9e',
+          backgroundColor: '#90ee90',
         },
         {
           id: 'cal2',
           name: 'Work',
-          backgroundColor: '#00a9ff',
+          backgroundColor: '#e0ffff',
+        },
+        {
+          id: 'cal3',
+          name: 'Day off',
+          backgroundColor: '#ffffe0',
+        },
+        {
+          id: 'cal4',
+          name: 'Emergency',
+          backgroundColor: '#ffa07a',
         },
       ]
     };
@@ -56,31 +60,44 @@ $("#controlAddIn").load(url, function (response, status, xhr) {
     document.getElementById("calendarDateRange").innerHTML = dateStart.toLocaleDateString() + ' ~ ' + dateEnd.toLocaleDateString();
 
     calendar.createEvents([
-        {
-          id: 'event1',
-          calendarId: 'cal2',
-          title: 'Weekly meeting',
-          start: '2024-10-17T09:00:00',
-          end: '2024-10-17T10:00:00',
-        },
-        {
-          id: 'event2',
-          calendarId: 'cal1',
-          title: 'Lunch appointment',
-          start: '2024-10-18T12:00:00',
-          end: '2024-10-18T13:00:00',
-        },
-        {
-          id: 'event3',
-          calendarId: 'cal2',
-          title: 'Vacation',
-          start: '2024-10-19',
-          end: '2024-10-22',
-          isAllday: true,
-          category: 'allday',
-        },
-      ]
-    );
+      {
+        id: 'event0',
+        calendarId: 'cal2',
+        title: 'Daily standup',
+        start: '2024-10-23T08:00:00',
+        end: '2024-10-23T08:15:00',
+      },
+      {
+        id: 'event1',
+        calendarId: 'cal2',
+        title: 'Weekly planning',
+        start: '2024-10-23T09:00:00',
+        end: '2024-10-23T10:00:00',
+      },
+      {
+        id: 'event2',
+        calendarId: 'cal4',
+        title: 'Production issue',
+        start: '2024-10-23T09:30:00',
+        end: '2024-10-23T11:30:00',
+      },
+      {
+        id: 'event3',
+        calendarId: 'cal1',
+        title: 'Lunch appointment',
+        start: '2024-10-23T12:00:00',
+        end: '2024-10-23T13:00:00',
+      },
+      {
+        id: 'event3',
+        calendarId: 'cal3',
+        title: 'Vacation',
+        start: '2024-10-16',
+        end: '2024-10-21',
+        isAllday: true,
+        category: 'allday',
+      },
+    ]);
     
     calendar.render();
 
@@ -104,6 +121,17 @@ $("#controlAddIn").load(url, function (response, status, xhr) {
       dateEnd = new Date(calendar.getDateRangeEnd());
       document.getElementById("calendarDateRange").innerHTML = dateStart.toLocaleDateString() + ' ~ ' + dateEnd.toLocaleDateString();
     }
+
+    calendar.on('beforeUpdateEvent', ({ event, changes }) => {
+      console.log('beforeUpdateEvent', event);
+      console.log('beforeUpdateEvent', changes);
+      calendar.updateEvent(event.id, event.calendarId, changes);
+    });
+
+    calendar.on('beforeDeleteEvent', (eventObj) => {
+      console.log('beforeDeleteEvent', eventObj);
+      calendar.deleteEvent(eventObj.id, eventObj.calendarId);
+    });
   }
 });
 

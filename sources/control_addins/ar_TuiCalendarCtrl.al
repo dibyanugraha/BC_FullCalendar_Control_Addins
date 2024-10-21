@@ -3,11 +3,15 @@ controladdin ar_TuiCalendarCtrl
     Scripts =
         'scripts/startup.js'
         , 'scripts/supplyData.js'
+        , 'scripts/tui-time-picker.min.js'
+        , 'scripts/tui-date-picker.min.js'
         , 'scripts/toastui-calendar.min.js'
         , 'https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js';
 
     StyleSheets =
-        'stylesheets/toastui-calendar.min.css'
+        'stylesheets/tui-time-picker.min.css'
+        , 'stylesheets/tui-date-picker.min.css'
+        , 'stylesheets/toastui-calendar.min.css'
         , 'https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css'
         , 'https://fonts.googleapis.com/icon?family=Material+Icons'
         , 'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined';
@@ -15,16 +19,13 @@ controladdin ar_TuiCalendarCtrl
     StartupScript = 'scripts/startup.js';
     Images = 'htmls/calendarContainer.html';
 
-    RequestedHeight = 700;
-    RequestedWidth = 700;
+    RequestedHeight = 650;
+    MinimumHeight = 650;
     MinimumWidth = 600;
-    MaximumWidth = 2000;
-    MinimumHeight = 600;
-    MaximumHeight = 2000;
+    MaximumWidth = 1000;
+    MaximumHeight = 1000;
     HorizontalStretch = true;
     VerticalStretch = true;
-    HorizontalShrink = true;
-    VerticalShrink = true;
 
     event OnInsertNewRecord();
     event OnControlAddInReady();
